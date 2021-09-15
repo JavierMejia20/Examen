@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ens">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie Fibunacci</title>
+</head>
+<body>
+    <h1>Serie</h1>
+    <input id="num">
+    <button type="boton" onclick="myfunction()">Calcular</button>
+    <p id="resultado"></p>
+    <script>
+        function myfunction(){
+            var n, texto;
+            n=document.getElementById("num").value;
+            if(isNaN(n)){
+                texto = "Nececitas agregar numeros";
+                alert("No utilices letras o simbolos, solo numeros");
+            }
+            else{
+                var a = 0
+                var b = 1
+                var tmp= 1;
+                b = 1;
+                for(var i=0; i < n ; i++){
+                    document.write(a + " ");
+                    tmp = a + b;
+                    a = b;
+                    b = tmp;
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

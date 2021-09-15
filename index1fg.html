@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula General</title>
+</head>
+<body>
+    <h1>Formula General</h1>
+    <p>Calculadora de ecuaciones</p>
+    <input id="a">
+    <input id="b">
+    <input id="c">
+    <button type="boton" onclick="myfunction()">Calcular</button>
+    <p id="resultado"></p>
+    <script>
+        function myfunction() {
+            var a,b,c,calcular1,calcular2,texto;
+            a=document.getElementById("a").value;
+            b=document.getElementById("b").value;
+            c=document.getElementById("c").value;
+            if(isNaN(a)||isNaN(b)||isNaN(c)){
+                texto = "Es necesario añadir numeros";
+                alert("Tienes que ingresar numeros solamente");
+            }else{
+                calcular1=(-parseFloat(b)+Math.sqrt((parseFloat(b)*(parseFloat(b)))-4*(parseFloat(a)*(parseFloat(c)))))/2*(parseFloat(a));
+                calcular2=(-parseFloat(b)-Math.sqrt((parseFloat(b)*(parseFloat(b)))-4*(parseFloat(a)*(parseFloat(c)))))/2*(parseFloat(a));
+                texto = "El resultado es x1: " +  calcular1.toString() + " x2: " + calcular2.toString();
+            }
+            document.getElementById("resultado").innerHTML = texto;
+        }
+    </script>
+</body>
+</html>
